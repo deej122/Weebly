@@ -142,6 +142,8 @@ input:focus{
 
 #templates{
 	min-height: 140px;
+	max-height: 400px;
+	overflow: scroll;
 	text-align: center;
 	border-bottom: 2px groove rgba(25, 37, 48, 1);
 }
@@ -270,7 +272,7 @@ input:focus{
 	display: inline-block;
 }
 
-#plus{
+.plus{
 	float: left;
 	margin-top: 6px;
 	width: 25px;
@@ -279,11 +281,11 @@ input:focus{
 	background-position: -5px -9px;
 }
 
-#plus:hover{
+.plus:hover{
 	background-position: -5px -28px;
 }
 
-#edit{
+.edit{
 	margin-top: 0px;
 	margin-right: 0px;
 	width: 25px;
@@ -292,11 +294,11 @@ input:focus{
 	background-position: -28px -12px;	
 }
 
-#edit:hover{
+.edit:hover{
 	background-position: -28px -31px;	
 }
 
-#delete{
+.delete{
 	margin-top: 6px;
 	margin-right: -23px;
 	width: 15px;
@@ -305,7 +307,7 @@ input:focus{
 	background-position: -52px -8px;	
 }
 
-#delete:hover{
+.delete:hover{
 	margin-top: 6px;
 	margin-right: -23px;
 	width: 15px;
@@ -697,7 +699,7 @@ span.switchedOff:hover{
 /*Close Page Styling*/
 
 .blue{
-	border: 1px solid rgba(126, 185, 255, 1);	
+	border: 1px solid rgba(126, 185, 255, 1);
 }
 
 .red{
@@ -708,5 +710,28 @@ span.switchedOff:hover{
 	display: "";
 }
 
+/*resizing*/
 
+.left{
+	float: left;
+	position: absolute;
+	margin-top: 50px;
+	margin-left: -50%;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg);	
+}
+
+.right{
+	float: left;
+	margin-right: -100%;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg);
+}
+
+.bottom{
+	position: absolute;
+	top: 0px;
+}
 

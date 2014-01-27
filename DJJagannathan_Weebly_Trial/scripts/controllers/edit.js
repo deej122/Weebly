@@ -17,14 +17,14 @@ Weeblys.EditController = Ember.ObjectController.extend({
       var page = this.get('model');
       page.deleteRecord();
       page.save();
-    }
+    }, 
   },
     setSelected: function () {
       this.set('isSelected', true);
     },
     deSelect: function () {
       this.set('isSelected', false);
-    },   
+    },        
 
   isEditing: false
 });

@@ -5,6 +5,6 @@ Weeblys.Body = DS.Model.extend({
 Weeblys.Body.FIXTURES = [
 	{
 		id: 1,
-		title: 'Add Title Here'
+		content: 'BODY CONTENT HERERERERERERE'
 	}
 ];

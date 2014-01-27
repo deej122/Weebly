@@ -5,6 +5,6 @@ Weeblys.Title = DS.Model.extend({
 Weeblys.Title.FIXTURES = [
 	{
 		id: 1,
-		title: 'Add Title Here'
+		name: 'Add Title Here'
 	}
 ];

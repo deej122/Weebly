@@ -2,47 +2,54 @@
 Weeblys.WeeblysView = Ember.View.extend({
 	didInsertElement: function() {
 
+//Animate Switch Grid button onclick
 	$("#gridSwitch").click(function(){
  	$("#gridSwitch").toggleClass("switchedOn");
  	$("#gridSwitch").toggleClass("switchedOff");
 	});
 
-	$("#delete").hover(function(){
-	$("#pageControl").toggleClass("removePage");
-	$("#edit").toggleClass("invisible");
+//Animate Page Links on hover over of delete button
+//NOTE: Only works for new links on refresh?
+	$(".delete").hover(function(){
+	$(this).parent().parent().toggleClass("removePage");
+	$(".edit").toggleClass("invisible");
 	});
 
+//Animate Close on hover over image
   $("span.image").hover(function(){
     $(".image").toggleClass("blue");
     $(".closeImage").toggleClass("invisible");
     $(".closeImage").toggleClass("visible");
   });  
 
+//Animate close on hover over title
   $("h3.title").hover(function(){
-    $(".title").toggleClass("blue");
+    $(this).toggleClass("blue");
     $(".closeTitle").toggleClass("invisible");      
     $(".closeTitle").toggleClass("visible");    
   });  
 
+//Animate close on hover over body
   $("span.body").hover(function(){
     $(".body").toggleClass("blue");
     $(".closeBody").toggleClass("invisible");     
     $(".closeBody").toggleClass("visible");    
   });  
 
+//Animate close on hover over it
   $("span.closeImage").hover(function(){
-    $(".image").toggleClass("blue");
-    $(".image").toggleClass("red");
+    $(this).parent().toggleClass("blue");
+    $(this).parent().toggleClass("red");
   });
 
   $("span.closeTitle").hover(function(){
-    $(".title").toggleClass("blue");
-    $(".title").toggleClass("red");
+    $(this).parent().toggleClass("blue");
+    $(this).parent().toggleClass("red");
   });
 
   $("span.closeBody").hover(function(){
-    $(".body").toggleClass("blue");
-    $(".body").toggleClass("red");
+    $(this).parent().toggleClass("blue");
+    $(this).parent().toggleClass("red");
   });    
 
   	$(function() {

@@ -26,8 +26,8 @@
             <li id="pageNameDisplay" class="pageName" {{action "setSelected" on="click"}}>{{title}}</li>
            </ul>
             <ul class="controls">
-              <li id="edit" {{action "editPageTitle" on="click"}} {{bind-attr class="isDeleting:invisible"}}></li>
-              <li id="delete" {{action "deletePage" on="click"}}></li>
+              <li class="edit" {{action "editPageTitle" on="click"}}></li>
+              <li class="delete" {{action "deletePage" on="click"}}></li>
             </ul>
           {{/if}}  
           </li>
@@ -37,7 +37,7 @@
           <li class="newPage">
             {{input type="text" class="pageName" id="newPageText" placeholder="ADD NEW PAGE" value=newPageTitle action="createNewPage"}}
             <ul class="controls">
-              <li id="plus" {{action "createNewPage" on="click"}}></li>
+              <li class="plus" {{action "createNewPage" on="click"}}></li>
             </ul>
           </li>          
         </ul>
@@ -100,7 +100,7 @@
 
       <div id="textContent">
         <div id="titleContent" class="droppableTitle">
-          <h3 class="title resizableTitle">
+          <h3 id="titleY" class="title resizableTitle">
 			<span class="closeTitle invisible"></span>
           	Add Title Here
           </h3>
@@ -108,6 +108,9 @@
         <div id="bodyContent" class="droppableText">
           <span class="body resizableText">
           	<span class="closeBody invisible"></span>
+          		<img style="width: 30%" class="left ui-resizable-handle ui-resizable-n" src="Assets/Sprites/Resize-Bar.png"/>
+          		<img class="right ui-resizable-handle ui-resizable-n " src="Assets/Sprites/Resize-Bar.png"/>
+          		<img style="width:30%;"class="bottom ui-resizable-handle ui-resizable-n" src="Assets/Sprites/Resize-Bar.png"/>
             Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi convallis massa quis justo. Nam sollicitudin ipsum eu justo. Suspendisse libero risus, ornare non, ultricies ac, mattis eget, dolor. In dignissim orci ut lectus. 
           </span> 
         </div>
@@ -125,9 +128,6 @@
       <script src="scripts/app.js"></script>
       <script src="scripts/router.js"></script>
       <script src="scripts/models/pages.js"></script>
-      <script src="scripts/models/titles.js"></script>
-      <script src="scripts/models/body.js"></script>
-      <script src="scripts/models/images.js"></script>
       <script src="scripts/controllers/new.js"></script>
       <script src="scripts/controllers/edit.js"></script>
       <script src="scripts/views/edit_page_view.js"></script>
