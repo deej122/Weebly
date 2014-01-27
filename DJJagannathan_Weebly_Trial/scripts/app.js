@@ -2,6 +2,6 @@
 window.Weeblys = Ember.Application.create();
 
 //Allows for Local Storage
-Weeblys.ApplicationAdapter = DS.LSAdapter.extend({
+Weeblys.ApplicationAdapter = DS.FixtureAdapter.extend({
 	namespace: 'weebly-emberjs'
 });

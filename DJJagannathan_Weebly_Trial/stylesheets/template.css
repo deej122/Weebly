@@ -273,14 +273,14 @@ input:focus{
 #plus{
 	float: left;
 	margin-top: 6px;
-	width: 33px;
+	width: 25px;
 	height: 19px;
 	background-image: url('../Assets/Sprites/Add-Delete-Edit-Icons.png');
-	background-position: 4px -9px;
+	background-position: -5px -9px;
 }
 
 #plus:hover{
-	background-position: 4px -28px;
+	background-position: -5px -28px;
 }
 
 #edit{
@@ -552,12 +552,12 @@ span.switchedOff:hover{
 /*IMAGE ELEMENT*/
 
 .image{
-	float: none;
 	margin-top: 60px;
 	margin-left: 100px;
 	margin-right: 100px;
 	max-height: 400px;
 	width: 80%;
+	max-width: 80%;
 	text-align: center;
 	background-color: rgba(235, 239, 242, 1);
 	border: 1px solid rgba(179, 192, 207, 1);
@@ -565,18 +565,14 @@ span.switchedOff:hover{
 	display: inline-block;
 }
 
-.image:hover{
+/*.image:hover{
 	cursor: pointer;
+	border: 1px solid rgba(126, 185, 255, 1);
 }
-
+*/
 .image img{
 	vertical-align: center;
 	margin-top: 60px;
-}
-
-.new{
-	float: none;
-	margin-top: -100px;
 }
 
 /*#picture{
@@ -605,21 +601,112 @@ span.switchedOff:hover{
 	display: inline-block;
 	padding-right: 10px;
 	max-width: 45%;
+	padding: 5px;		
+	border-radius: 5px;	
+	border: 1px solid rgba(126, 185, 255, 0);	
 }
 
+/*.title:hover{
+	cursor: pointer;
+	border: 1px solid rgba(126, 185, 255, 1);
+}
+
+.title:active{
+	border: 1px solid rgba(126, 185, 255, 1);
+}
+*/
 .body{
 	display: inline-block;
 	font-size: 14px;
 	max-height: 200px;
 	max-width: 100%;
 	overflow: hidden;
+	padding: 5px;		
+	border-radius: 5px;
+	border: 1px solid rgba(126, 185, 255, 0);	
 }
 
+/*.body:hover{
+	cursor: pointer;
+	border: 1px solid rgba(126, 185, 255, 1);
+}
+
+.body:active{
+	border: 1px solid rgba(126, 185, 255, 1);
+}
+*/
+.body:target{
+	cursor: text;
+}
+
+/*Make Elements smaller when another is added*/
 .after{
-	max-width: 49%;
+	max-width: 45%;
 }
 
 .after2{
-	width: 30%;
-	display: inline-block;	
+	width: 40%;
 }
+
+/*Deleting elements from page*/
+.closeImage{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 35px;
+	background-image: url('../Assets/Sprites/Delete-Element.png');
+	background-position: -5px -11px;
+}
+
+.closeImage:hover{
+	background-position: -48px -11px;	
+	cursor: pointer;	
+}
+
+.closeTitle{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 37px;
+	background-image: url('../Assets/Sprites/Delete-Element.png');
+	background-position: -7px -10px;
+}
+
+.closeTitle:hover{
+	background-position: -50px -10px;
+	cursor: pointer;		
+}
+
+.closeBody{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 35px;
+	background-image: url('../Assets/Sprites/Delete-Element.png');
+	background-position: -5px -11px;
+}
+
+.closeBody:hover{
+	background-position: -48px -11px;	
+	cursor: pointer;
+}
+
+/*Close Page Styling*/
+
+.blue{
+	border: 1px solid rgba(126, 185, 255, 1);	
+}
+
+.red{
+	border-color: rgba(232, 99, 97, 1);
+}
+
+.visible{
+	display: "";
+}
+
+
+
