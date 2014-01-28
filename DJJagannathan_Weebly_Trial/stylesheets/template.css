@@ -574,6 +574,10 @@ span.switchedOff:hover{
 	max-width: 100%;
 }
 
+#picture:hover{
+	cursor: pointer;
+}
+
 #upload{
 	font-family: 'ProximaNova-bold';
 	font-size: 12px;
