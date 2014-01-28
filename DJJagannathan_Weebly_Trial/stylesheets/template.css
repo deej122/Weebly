@@ -10,26 +10,9 @@
     src:url(../Assets/Font/ProximaNova-Sbold.otf);
     font-family:'ProximaNova-bold';
 }
-
-@font-face
-{
-    src:url(../Assets/Font/ProximaNova-Light.otf);
-    font-family:'ProximaNova-light';
-}
-
-@font-face
-{
-    src:url(../Assets/Font/ProximaNova-LightIt.otf);
-    font-family:'ProximaNova-lightIt';
-}
-
-@font-face
-{
-    src:url(../Assets/Font/ProximaNova-RegIt.otf);
-    font-family:'ProximaNova-it';
-}
 /*END FONTS*/
 
+/*Set Height requirements for page and main elements on page*/
 html{
 	width: 100%;
 	min-width: 1400px;
@@ -41,10 +24,12 @@ body{
 	height: 100%;
 }
 
+/*IMPORTANT: NEED FOR EMBER TO ALLOW 100% HEIGHT*/
 body > .ember-view{
 	height: 100.5%;
 }
 
+/*General styling for common elements*/
 a{
 	text-decoration: none;
 }
@@ -58,6 +43,27 @@ ul, li{
 li:hover{
 	cursor: pointer;
 }
+
+input:focus{
+	outline: none;
+}
+
+textarea:focus{
+	outline: none;
+	border: 1px solid rgba(126, 185, 255, 1);
+}
+
+/*Commonly Used Style Elements*/
+
+.invisible{
+	visibility: hidden;
+}
+
+.visible{
+	display: "";
+}
+
+/*Sets placeholder color for ADD NEW PAGE*/
 
 *::-webkit-input-placeholder {
 	color: rgba(62, 82, 104, 1);
@@ -75,11 +81,9 @@ li:hover{
 	color: rgba(62, 82, 104, 1);
 }
 
-input:focus{
-	outline: none;
-}
+/*ALL PAGE CONTENTS*/
 
-/*PAGE STYLING*/
+/*Header Styling*/
 
 #header{
 	height: 40px;
@@ -99,7 +103,7 @@ input:focus{
 	margin-left: 30px;
 }
 
-/*LEFT NAVBAR*/
+/*LEFT NAVBAR STYLING*/
 
 #left{
 	float: left;
@@ -116,6 +120,7 @@ input:focus{
 	width: 100%;
 }
 
+/*Groups are each section i.e. templates, elements, settings*/
 .group{
 	width: 100%;
 	float: left;
@@ -142,32 +147,19 @@ input:focus{
 
 #templates{
 	min-height: 140px;
-	max-height: 400px;
+	max-height: 300px;
 	overflow: scroll;
 	text-align: center;
 	border-bottom: 2px groove rgba(25, 37, 48, 1);
 }
 
-/*.pageControl{
-	font-family: 'ProximaNova-bold';	
-	font-size: 12px;
-	text-align: left;
-	margin-left: 40px;
-	margin-right: 40px;
-	height: 35px;
-	line-height: 35px;
-	padding-right: 40px;
-	padding-left: 0px;
-	color: rgba(255, 255, 255, 1);
-	border: 1px solid rgba(76, 94, 113, 1);
-	border-radius: 5px;
-	background-color: rgba(62, 82, 104, 1);
-    -moz-box-shadow:    0px 1px 2px .5px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0px 1px 2px .5px rgba(0,0,0,.3);
-    box-shadow:         0px 1px 2px .5px rgba(0,0,0,.3);	
+/*Title of all pages*/
+.pageName{
+	float: left;
+	margin-left: 20px;
 }
-*/
 
+/*ADD NEW PAGE*/
 .newPage{
 	font-family: 'ProximaNova-bold';
 	font-size: 12px;
@@ -194,6 +186,7 @@ input:focus{
 	width: 70%;	
 }
 
+/*Color on click of page name and HOVER of Delete button (removePage)*/
 .selected{
 	font-family: 'ProximaNova-bold';	
 	font-size: 12px;
@@ -232,6 +225,24 @@ input:focus{
     box-shadow:         0px 1px 2px .5px rgba(0,0,0,.3);	
 }
 
+.removePage{
+	background-color: rgba(205, 83, 82, 1);
+	border-color: rgba(210, 97, 96, 1);
+}
+/*General Control Options for all Pages (i.e. Plus, Delete, Edit)*/
+.controls{
+	text-align: right;
+}
+
+.controls li{
+	display: none;
+}
+
+#templates li:hover .controls li{
+	display: inline-block;
+}
+
+/*Edit View(s) of Page Names*/
 .editTitle{
 	font-family: 'ProximaNova-bold';
 	color: rgba(255, 255, 255, 1);	
@@ -246,32 +257,7 @@ input:focus{
 	width: 100%;	
 }
 
-.removePage{
-	background-color: rgba(205, 83, 82, 1);
-	border-color: rgba(210, 97, 96, 1);
-}
-
-.invisible{
-	visibility: hidden;
-}
-
-.pageName{
-	float: left;
-	margin-left: 20px;
-}
-
-.controls{
-	text-align: right;
-}
-
-.controls li{
-	display: none;
-}
-
-#templates li:hover .controls li{
-	display: inline-block;
-}
-
+/*All Individual Control stylings*/
 .plus{
 	float: left;
 	margin-top: 6px;
@@ -315,6 +301,7 @@ input:focus{
 	background-image: url('../Assets/Sprites/Add-Delete-Edit-Icons.png');
 	background-position: -52px -27px;	
 }
+
 /*ELEMENTS GROUP CONTENTS*/
 
 #elements{
@@ -334,8 +321,26 @@ input:focus{
 	margin-top: 0px;
 }
 
+/*Setting up elements group*/
 .addDesc{
 	margin-top: auto;
+}
+
+.rightBorder{
+	display: block;
+	margin-top: -90px;
+	width: 100%;
+	height: 100%;
+	float: right;
+	border-right: 2px groove rgba(25, 37, 48, 1);
+}
+
+.bottomBorder{
+	display: block;
+	margin-top: -90px;
+	width: 100%;
+	height: 90%;
+	border-bottom: 2px groove rgba(25, 37, 48, 1);	
 }
 
 .addElement{
@@ -348,6 +353,7 @@ input:focus{
 	cursor: move;
 }
 
+/*Styling for each individual ELEMENT*/
 #titleBox{
 	float: left;
 	margin-left: 2%;
@@ -438,22 +444,6 @@ input:focus{
 	cursor: move;	
 }
 
-.rightBorder{
-	display: block;
-	margin-top: -90px;
-	width: 100%;
-	height: 100%;
-	float: right;
-	border-right: 2px groove rgba(25, 37, 48, 1);
-}
-
-.bottomBorder{
-	display: block;
-	margin-top: -90px;
-	width: 100%;
-	height: 90%;
-	border-bottom: 2px groove rgba(25, 37, 48, 1);	
-}
 /*SETTINGS GROUP CONTENTS*/
 
 #settings{
@@ -461,11 +451,7 @@ input:focus{
 	border-bottom: 2px groove rgba(25, 37, 48, 1);	
 }
 
-/*#grid{
-	height: 100%;
-	border-bottom: 2px groove rgba(25, 37, 48, 1);		
-}
-*/
+/*Setting up styling associated with Grid Switch Interaction*/
 #gridLabel #gridSwitch{
 	display: inline-block;
 }
@@ -507,7 +493,7 @@ span.switchedOff:hover{
 }
 
 
-/*Main Content*****************************************/
+/*Main Content: RIGHT SIDE OF PAGE*****************************************/
 
 #mainContent{
 	float: left;
@@ -518,14 +504,19 @@ span.switchedOff:hover{
 /*NAV ELEMENT*/
 
 #pageNav{
+	min-height: 50px;
 	margin-top: 70px;
 	margin-left: 100px;
 }
 
+#pageNavElement{
+	display: inline-block;
+}
 #pageNavElement:hover{
 	cursor: pointer;
 }
 
+/*Classes for PAGE Navs on top of page for when page is selected or not*/
 .selectedNav{
 	font-family: 'ProximaNova-bold';
 	font-size: 12px;
@@ -551,10 +542,15 @@ span.switchedOff:hover{
 	border: 2px solid rgba(113, 134, 156, 1); 
 	border-radius: 5px;	
 }
+
 /*IMAGE ELEMENT*/
 
+#imageContent{
+	min-height: 100px;
+}
+
 .image{
-	margin-top: 60px;
+	margin-top: 40px;
 	margin-left: 100px;
 	margin-right: 100px;
 	max-height: 400px;
@@ -567,21 +563,17 @@ span.switchedOff:hover{
 	display: inline-block;
 }
 
-/*.image:hover{
-	cursor: pointer;
-	border: 1px solid rgba(126, 185, 255, 1);
-}
-*/
 .image img{
 	vertical-align: center;
 	margin-top: 60px;
 }
 
-/*#picture{
+/*inside contents of big gray "Image"*/
+#picture{
 	max-height: 80%;
 	max-width: 100%;
 }
-*/
+
 #upload{
 	font-family: 'ProximaNova-bold';
 	font-size: 12px;
@@ -598,6 +590,11 @@ span.switchedOff:hover{
 	color: rgba(62, 82, 104, 1);
 }
 
+/*Title styling*/
+#titleContent{
+	min-height: 50px;
+}
+
 .title{
 	font-size: 30px;
 	display: inline-block;
@@ -608,15 +605,11 @@ span.switchedOff:hover{
 	border: 1px solid rgba(126, 185, 255, 0);	
 }
 
-/*.title:hover{
-	cursor: pointer;
-	border: 1px solid rgba(126, 185, 255, 1);
+/*Body styling*/
+#bodyContent{
+	min-height: 100px;
 }
 
-.title:active{
-	border: 1px solid rgba(126, 185, 255, 1);
-}
-*/
 .body{
 	display: inline-block;
 	font-size: 14px;
@@ -628,18 +621,13 @@ span.switchedOff:hover{
 	border: 1px solid rgba(126, 185, 255, 0);	
 }
 
-/*.body:hover{
-	cursor: pointer;
-	border: 1px solid rgba(126, 185, 255, 1);
-}
-
-.body:active{
-	border: 1px solid rgba(126, 185, 255, 1);
-}
-*/
 .body:target{
 	cursor: text;
 }
+
+/*END MAIN CONTENT ORIGINAL STYLING**************************/
+
+/*MAJOR DYNAMIC STYLING**************************/
 
 /*Make Elements smaller when another is added*/
 .after{
@@ -650,7 +638,9 @@ span.switchedOff:hover{
 	width: 40%;
 }
 
-/*Deleting elements from page*/
+/*Make X button show up and change*/
+
+/*Image X*/
 .closeImage{
 	position: absolute;
 	top: 0;
@@ -666,6 +656,7 @@ span.switchedOff:hover{
 	cursor: pointer;	
 }
 
+/*Title X*/
 .closeTitle{
 	position: absolute;
 	top: 0;
@@ -681,6 +672,7 @@ span.switchedOff:hover{
 	cursor: pointer;		
 }
 
+/*Body X*/
 .closeBody{
 	position: absolute;
 	top: 0;
@@ -696,7 +688,7 @@ span.switchedOff:hover{
 	cursor: pointer;
 }
 
-/*Close Page Styling*/
+/*X Button styling*/
 
 .blue{
 	border: 1px solid rgba(126, 185, 255, 1);
@@ -706,32 +698,64 @@ span.switchedOff:hover{
 	border-color: rgba(232, 99, 97, 1);
 }
 
-.visible{
-	display: "";
+/*Resizing of Elements using Blue Handles*/
+
+.leftImage{
+	margin-top: 5%;
+	margin-left: -2px;	
 }
 
-/*resizing*/
-
-.left{
-	float: left;
-	position: absolute;
-	margin-top: 50px;
-	margin-left: -50%;
-	transform:rotate(90deg);
-	-ms-transform:rotate(90deg); /* IE 9 */
-	-webkit-transform:rotate(90deg);	
+.rightImage{
+	margin-top: 5%;
+	margin-right: -2px;				
 }
 
-.right{
-	float: left;
-	margin-right: -100%;
+.bottomImage{
+	margin-bottom: -42px;
 	transform:rotate(90deg);
 	-ms-transform:rotate(90deg); /* IE 9 */
 	-webkit-transform:rotate(90deg);
+	margin-left: 49%;		
+}
+
+.leftTitle{
+	margin-top: 5%;	
+	margin-left: -2px;	
+}
+
+.rightTitle{
+	margin-top: 5%;
+	margin-right: -2px;				
+}
+
+.leftBody{
+	margin-top: 5%;	
+	margin-left: -2px;
+}
+
+.rightBody{
+	margin-top: 5%;
+	margin-right: -2px;				
 }
 
 .bottom{
-	position: absolute;
-	top: 0px;
+	margin-bottom: -42px;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg);
+	margin-left: 45%;	
+}
+
+.top{
+	margin-top: -40px;	
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg);
+	margin-left: 45%;		
+}
+
+/*Drag and Drop Styling (Borders)*/
+.dropZone{
+	border: 3px dashed rgba(126, 185, 255, 1);
 }
 

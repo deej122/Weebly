@@ -16,7 +16,7 @@ Weeblys.WeeblysController = Ember.ArrayController.extend({
 			this.set('newPageTitle', '');
 
 			//Save new model
-			page.save();
+			page.save();		
 		}
 	}
 	
